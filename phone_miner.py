@@ -113,18 +113,9 @@ def resolve_dns_seed(seed):
         print(f"[DNS] Failed to resolve {seed}: {e}")
         return None
 
-def discover_nodes():
-    nodes = []
-    for seed in DNS_SEEDS:
-        ip = resolve_dns_seed(seed)
-        if ip:
-            nodes.append(f"ws://{ip}:{NODE_PORT}")
-    if not nodes:
-        nodes = ["ws://127.0.0.1:8080"]
-        print(f"[DNS] Using fallback node: 127.0.0.1:8080")
-    return nodes
+200.36.138.198:8081
 
-# ==================== WALLET MANAGEMENT ====================
+# ==================== WALLET MANAGEMENT=================
 class Wallet:
     def __init__(self, username, address, public_key_pem, private_key_hex):
         self.username = username
